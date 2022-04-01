@@ -1,0 +1,388 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Shop</title>
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css"
+    />
+    <link rel="stylesheet" href="styles.css" />
+    <link
+      href="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/css/bootstrap.min.css"
+      rel="stylesheet"
+      integrity="sha384-1BmE4kWBq78iYhFldvKuhfTAU6auU8tT94WrHftjDbrCEXSU1oBoqyl2QvZ6jIW3"
+      crossorigin="anonymous"
+    />
+    <!-- <script src="./script.js"></script> -->
+  </head>
+  <body onload="loadInitialData()">
+    <nav class="navbar navbar-light topNav nav1 shadow-lg rounded">
+      <div class="container-fluid">
+        <a class="navbar-brand brandName" href="/">
+          <i class="fas fa-shopping-basket logo" width="30" height="24"></i>
+          Grocery Store
+        </a>
+        <form class="d-flex">
+          <input
+            class="form-control me-2"
+            type="search"
+            placeholder="Search"
+            aria-label="Search"
+          />
+          <button class="btn btn-success" type="submit">
+            <i class="fa-solid fa-magnifying-glass"></i>
+          </button>
+        </form>
+      </div>
+    </nav>
+
+    <!-- Navbar 2 -->
+    <nav
+      class="navbar navbar-expand-lg navbar-light topNav nav2 shadow rounded"
+    >
+      <button
+        class="navbar-toggler"
+        type="button"
+        data-bs-toggle="collapse"
+        data-bs-target="#navbarNavAltMarkup"
+        aria-controls="navbarNavAltMarkup"
+        aria-expanded="false"
+        aria-label="Toggle navigation"
+      >
+        <span class="navbar-toggler-icon"></span>
+      </button>
+      <div class="collapse navbar-collapse" id="navbarNavAltMarkup">
+        <div class="navbar-nav">
+          <a class="nav-link nav2Link" aria-current="page" href="index.html"
+            >Home</a
+          >
+          <a class="nav-link nav2Link" href="product.html">Shop</a>
+          <a class="nav-link nav2Link" href="about.html">About</a>
+          <a class="nav-link active nav2Link" href="review.html">Review</a>
+          <a class="nav-link nav2Link" href="blog.html">Blog</a>
+          <a class="nav-link nav2Link" href="contact.html">Contact</a>
+        </div>
+      </div>
+      <div class="d-flex icon">
+        <button
+          type="button"
+          data-toggle="modal"
+          data-bs-toggle="modal"
+          data-bs-target="#exampleModal"
+        >
+          <i class="fa-solid fa-cart-shopping icon" id="cart-btn"></i>
+        </button>
+        <button
+          type="button"
+          data-bs-toggle="modal"
+          data-bs-target="#addNewModal"
+        >
+          <i class="fa-solid fa-plus icon"></i>
+        </button>
+
+        <i class="fa-solid fa-circle-user icon"></i>
+      </div>
+    </nav>
+    <!-- Modal for adding review -->
+
+    <div
+      class="modal fade"
+      id="addNewModal"
+      tabindex="-1"
+      aria-labelledby="addNewModalLabel"
+      aria-hidden="true"
+    >
+      <div class="modal-dialog">
+        <div class="modal-content">
+          <div class="modal-header">
+            <h5 class="modal-title" id="addNewModalLabel">Add New Review</h5>
+            <button
+              type="button"
+              class="btn-close"
+              data-bs-dismiss="modal"
+              aria-label="Close"
+            ></button>
+          </div>
+          <div class="modal-body">
+            <form>
+              <!-- Image url -->
+              <div class="mb-3">
+                <label for="imageUrl" class="form-label">Image Url</label>
+                <input
+                  type="url"
+                  class="form-control"
+                  id="imageUrl"
+                  placeholder="http://example.com/image.png"
+                />
+              </div>
+
+              <!-- Name of user -->
+              <div class="mb-3">
+                <label for="reviewName" class="form-label">Name</label>
+                <input
+                  type="text"
+                  class="form-control"
+                  id="reviewName"
+                  placeholder="Arun Sethi"
+                  required
+                />
+              </div>
+
+              <div class="mb-3">
+                <label for="client-type" class="form-label">Client type</label>
+                <select
+                  class="custom-select form-control"
+                  id="client-type"
+                  required
+                >
+                  <option selected>Choose...</option>
+                  <option value="Happy Client">Happy Client</option>
+                  <option value="Sad Client">Sad Client</option>
+                </select>
+              </div>
+              <!-- Words  -->
+              <div class="mb-3">
+                <label for="review-description" class="form-label"
+                  >Your Review</label
+                >
+                <textarea
+                  class="form-control"
+                  id="review-description"
+                  placeholder="Tell us what you feel"
+                  rows="4"
+                  required
+                ></textarea>
+              </div>
+              <button
+                type="button"
+                class="btn btn-secondary"
+                data-bs-dismiss="modal"
+              >
+                Close
+              </button>
+              <button
+                type="submit"
+                class="btn btn-success"
+                onclick="handlesubmit()"
+                data-bs-dismiss="modal"
+              >
+                Post Review
+              </button>
+            </form>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <!-- Shopping Cart -->
+    <div
+      class="modal fade"
+      id="exampleModal"
+      tabindex="-1"
+      aria-labelledby="exampleModalLabel"
+      aria-hidden="true"
+    >
+      <div class="modal-dialog modal-lg">
+        <div class="modal-content">
+          <div class="modal-header cart-title">
+            <h5 class="modal-title" id="exampleModalLabel">Your Cart</h5>
+            <button
+              type="button"
+              class="btn-close"
+              data-bs-dismiss="modal"
+              aria-label="Close"
+            ></button>
+          </div>
+          <div class="modal-body cart-modal">
+            <div class="cart-products"></div>
+            <hr style="margin: 30px auto" />
+            <div class="total d-flex">
+              <h5>Total</h5>
+              <h5 class="cart-total-price"></h5>
+            </div>
+          </div>
+          <div class="modal-footer">
+            <button
+              type="button"
+              class="btn btn-secondary"
+              data-bs-dismiss="modal"
+            >
+              Back to shopping
+            </button>
+            <button type="button" class="btn btn-danger clearCart">
+              Clear Cart
+            </button>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <section class="article-container">
+      <div class="top-sec">
+        <h1>CLIENT'S REVIEW</h1>
+        <h3>Home >> Review</h3>
+      </div>
+    </section>
+
+    <section id="services">
+      <div class="row">
+        <div class="col-lg-4 col-md-6 col-sm-12">
+          <div class="card mb-3" style="max-width: 540px; border: none">
+            <div class="row g-0 service-card">
+              <div class="col-md-4">
+                <img
+                  src="images/services/delivery.png"
+                  class="img-fluid rounded-start"
+                  alt="..."
+                  style="width: 100%"
+                />
+              </div>
+              <div class="col-md-8">
+                <div class="card-body">
+                  <h5 class="card-title">Fast Delivery</h5>
+                  <p class="card-text">Within 30 minutes</p>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+        <div class="col-lg-4 col-md-6 col-sm-12">
+          <div class="card mb-3" style="max-width: 540px; border: none">
+            <div class="row g-0 service-card">
+              <div class="col-md-4">
+                <img
+                  src="images/services/call.png"
+                  class="img-fluid rounded-start"
+                  alt="..."
+                  style="width: 100%"
+                />
+              </div>
+              <div class="col-md-8">
+                <div class="card-body">
+                  <h5 class="card-title">24 / 7 Service</h5>
+                  <p class="card-text">Call us anytime</p>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+        <div class="col-lg-4 col-md-6 col-sm-12">
+          <div class="card mb-3" style="max-width: 540px; border: none">
+            <div class="row g-0 service-card">
+              <div class="col-md-4">
+                <img
+                  src="images/services/payment.png"
+                  class="img-fluid rounded-start"
+                  alt="..."
+                  style="width: 100%"
+                />
+              </div>
+              <div class="col-md-8">
+                <div class="card-body">
+                  <h5 class="card-title">Easy payments</h5>
+                  <p class="card-text">Cash or Card</p>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+    <section id="reviews">
+      <div class="row review__contents">
+        <!-- Add this -->
+        <!-- <div class="col-lg-4 col-md-6 col-sm-12">
+          <div class="card mb-3 review-card" style="max-width: 540px">
+            <div class="row g-0">
+              <div class="col-md-4">
+                <img
+                  src="data:image/jpeg;base64,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"
+                  class="rounded-circle"
+                  alt="user image"
+                  width="100%"
+                />
+              </div>
+              <div class="col-md-8 right-col">
+                <div class="card-body">
+                  <h5 class="card-title">Nayni Shah</h5>
+                  <p class="card-text sub-title">Happy Client</p>
+                </div>
+              </div>
+            </div>
+            <div class="card-body">
+              <p class="card-text cust-review">
+                This is a wider card with supporting text below as a natural
+                lead-in to additional content. This content is a little bit
+                longer.
+              </p>
+            </div>
+          </div>
+        </div> -->
+
+        <!-- Add here -->
+      </div>
+    </section>
+    <!-- Footer -->
+    <footer class="page-footer font-small pt-4">
+      <div class="container-fluid text-left footer-head">
+        <div class="row">
+          <div class="col-md-6 mt-md-0 col-sm-12 mt-3">
+            <h5 class="text-uppercase">
+              <i class="fas fa-shopping-basket logo" width="30" height="24"></i>
+              Grocery Store
+            </h5>
+            <p>
+              Buy your daily essentials at a very reasonable rate. Guaranteed
+              low price across the web!
+            </p>
+          </div>
+          <div class="col-md-3 mb-md-0 col-sm-6 mb-3">
+            <h5 class="text-uppercase">Our Locations</h5>
+
+            <ul class="list-unstyled">
+              <li>
+                <a href="index.html">India</a>
+              </li>
+              <li>
+                <a href="index.html">USA</a>
+              </li>
+              <li>
+                <a href="index.html">Japan</a>
+              </li>
+              <li>
+                <a href="index.html">China</a>
+              </li>
+            </ul>
+          </div>
+          <div class="col-md-3 col-sm-6 mb-md-0 mb-3">
+            <h5 class="text-uppercase">Quick Links</h5>
+            <ul class="list-unstyled">
+              <li>
+                <a href="index.html">Home</a>
+              </li>
+              <li>
+                <a href="#services">Services</a>
+              </li>
+              <li>
+                <a href="#reviews">Reviews</a>
+              </li>
+            </ul>
+          </div>
+        </div>
+      </div>
+      <div class="footer-copyright text-center py-3">
+        © 2022 Copyright: Nayni Shah
+      </div>
+    </footer>
+    <script src="add-review.js"></script>
+    <script src="cart.js"></script>
+    <script
+      src="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/js/bootstrap.bundle.min.js"
+      integrity="sha384-ka7Sk0Gln4gmtz2MlQnikT1wXgYsOg+OMhuP+IlRH9sENBO0LRn5q+8nbTov4+1p"
+      crossorigin="anonymous"
+    ></script>
+  </body>
+</html>

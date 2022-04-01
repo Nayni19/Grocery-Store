@@ -1,0 +1,250 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>About Us</title>
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css"
+    />
+    <link rel="stylesheet" href="styles.css" />
+    <link
+      href="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/css/bootstrap.min.css"
+      rel="stylesheet"
+      integrity="sha384-1BmE4kWBq78iYhFldvKuhfTAU6auU8tT94WrHftjDbrCEXSU1oBoqyl2QvZ6jIW3"
+      crossorigin="anonymous"
+    />
+    <!-- <script src="./script.js"></script> -->
+  </head>
+  <body>
+    <nav class="navbar navbar-light topNav nav1 shadow-lg rounded">
+      <div class="container-fluid">
+        <a class="navbar-brand brandName" href="/">
+          <i class="fas fa-shopping-basket logo" width="30" height="24"></i>
+          Grocery Store
+        </a>
+        <form class="d-flex">
+          <input
+            class="form-control me-2"
+            type="search"
+            placeholder="Search"
+            aria-label="Search"
+          />
+          <button class="btn btn-success" type="submit">
+            <i class="fa-solid fa-magnifying-glass"></i>
+          </button>
+        </form>
+      </div>
+    </nav>
+
+    <!-- Navbar 2 -->
+    <nav
+      class="navbar navbar-expand-lg navbar-light topNav nav2 shadow rounded"
+    >
+      <button
+        class="navbar-toggler"
+        type="button"
+        data-bs-toggle="collapse"
+        data-bs-target="#navbarNavAltMarkup"
+        aria-controls="navbarNavAltMarkup"
+        aria-expanded="false"
+        aria-label="Toggle navigation"
+      >
+        <span class="navbar-toggler-icon"></span>
+      </button>
+      <div class="collapse navbar-collapse" id="navbarNavAltMarkup">
+        <div class="navbar-nav">
+          <a class="nav-link nav2Link" aria-current="page" href="index.html"
+            >Home</a
+          >
+          <a class="nav-link nav2Link" href="product.html">Shop</a>
+          <a class="nav-link active nav2Link" href="about.html">About</a>
+          <a class="nav-link nav2Link" href="review.html">Review</a>
+          <a class="nav-link nav2Link" href="blog.html">Blog</a>
+          <a class="nav-link nav2Link" href="contact.html">Contact</a>
+        </div>
+      </div>
+      <div class="d-flex icon">
+        <button
+          type="button"
+          data-toggle="modal"
+          data-bs-toggle="modal"
+          data-bs-target="#exampleModal"
+        >
+          <i class="fa-solid fa-cart-shopping icon" id="cart-btn"></i>
+        </button>
+        <i class="fa-solid fa-heart icon"></i>
+        <i class="fa-solid fa-circle-user icon"></i>
+      </div>
+    </nav>
+
+    <!-- Shopping Cart -->
+
+    <div
+      class="modal fade"
+      id="exampleModal"
+      tabindex="-1"
+      aria-labelledby="exampleModalLabel"
+      aria-hidden="true"
+    >
+      <div class="modal-dialog modal-lg">
+        <div class="modal-content">
+          <div class="modal-header cart-title">
+            <h5 class="modal-title" id="exampleModalLabel">Your Cart</h5>
+            <button
+              type="button"
+              class="btn-close"
+              data-bs-dismiss="modal"
+              aria-label="Close"
+            ></button>
+          </div>
+          <div class="modal-body cart-modal">
+            <div class="cart-products"></div>
+            <hr style="margin: 30px auto" />
+            <div class="total d-flex">
+              <h5>Total</h5>
+              <h5 class="cart-total-price"></h5>
+            </div>
+          </div>
+          <div class="modal-footer">
+            <button
+              type="button"
+              class="btn btn-secondary"
+              data-bs-dismiss="modal"
+            >
+              Back to shopping
+            </button>
+            <button type="button" class="btn btn-danger clearCart">
+              Clear Cart
+            </button>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <section class="article-container">
+      <div class="top-sec">
+        <h1>ABOUT US</h1>
+        <h3>Home >> About</h3>
+      </div>
+    </section>
+
+    <section class="about-us" id="about-us">
+      <div class="row">
+        <div class="col-md-6 col-sm-12 fade-in">
+          <img src="./images/about-banner.png" alt="About us banner" />
+        </div>
+        <div class="col-md-6 col-sm-12">
+          <h3>Welcome To Our Shop</h3>
+          <h1>
+            Fresh and Organic vegetables and fruits at a very affordable rate.
+          </h1>
+          <p>
+            Fruits and veggies are full of important nutrients, like vitamins,
+            minerals, and fiber. That’s why we recommend making half your plate
+            fruits and vegetables. <br /><br />
+            Yet many Indians aren’t eating enough for good health. A common
+            reason why is the cost of produce. Researchers decided to calculate
+            how much it costs to meet our recommendations for fruits and
+            vegetables.
+          </p>
+        </div>
+      </div>
+    </section>
+
+    <section class="category about-gallery" id="gallery">
+      <h1>OUR <span>GALLERY</span></h1>
+      <div class="row">
+        <div class="col-lg-4 col-md-6 col-sm-12">
+          <div id="image-1" class="shadow"></div>
+        </div>
+        <div class="col-lg-4 col-md-6 col-sm-12">
+          <div id="image-2" class="shadow"></div>
+        </div>
+        <div class="col-lg-4 col-md-6 col-sm-12">
+          <div id="image-3" class="shadow"></div>
+        </div>
+
+        <div class="col-lg-4 col-md-6 col-sm-12">
+          <div id="image-4" class="shadow"></div>
+        </div>
+        <div class="col-lg-4 col-md-6 col-sm-12">
+          <div id="image-5" class="shadow"></div>
+        </div>
+        <div class="col-lg-4 col-md-6 col-sm-12">
+          <div id="image-6" class="shadow"></div>
+        </div>
+        <div class="col-lg-4 col-md-6 col-sm-12">
+          <div id="image-7" class="shadow"></div>
+        </div>
+        <div class="col-lg-4 col-md-6 col-sm-12">
+          <div id="image-8" class="shadow"></div>
+        </div>
+        <div class="col-lg-4 col-md-6 col-sm-12">
+          <div id="image-9" class="shadow"></div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Footer -->
+    <footer class="page-footer font-small pt-4">
+      <div class="container-fluid text-left footer-head">
+        <div class="row">
+          <div class="col-md-6 mt-md-0 col-sm-12 mt-3">
+            <h5 class="text-uppercase">
+              <i class="fas fa-shopping-basket logo" width="30" height="24"></i>
+              Grocery Store
+            </h5>
+            <p>
+              Buy your daily essentials at a very reasonable rate. Guaranteed
+              low price across the web!
+            </p>
+          </div>
+          <div class="col-md-3 mb-md-0 col-sm-6 mb-3">
+            <h5 class="text-uppercase">Our Locations</h5>
+
+            <ul class="list-unstyled">
+              <li>
+                <a href="index.html">India</a>
+              </li>
+              <li>
+                <a href="index.html">USA</a>
+              </li>
+              <li>
+                <a href="index.html">Japan</a>
+              </li>
+              <li>
+                <a href="index.html">China</a>
+              </li>
+            </ul>
+          </div>
+          <div class="col-md-3 col-sm-6 mb-md-0 mb-3">
+            <h5 class="text-uppercase">Quick Links</h5>
+            <ul class="list-unstyled">
+              <li>
+                <a href="index.html">Home</a>
+              </li>
+              <li>
+                <a href="#about-us">About</a>
+              </li>
+              <li>
+                <a href="#gallery">Gallery</a>
+              </li>
+            </ul>
+          </div>
+        </div>
+      </div>
+      <div class="footer-copyright text-center py-3">
+        © 2022 Copyright: Nayni Shah
+      </div>
+    </footer>
+    <script src="cart.js"></script>
+    <script
+      src="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/js/bootstrap.bundle.min.js"
+      integrity="sha384-ka7Sk0Gln4gmtz2MlQnikT1wXgYsOg+OMhuP+IlRH9sENBO0LRn5q+8nbTov4+1p"
+      crossorigin="anonymous"
+    ></script>
+  </body>
+</html>
