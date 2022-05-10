@@ -18,7 +18,7 @@ const htmlReviewContent = ({
 }) => ` 
   
   <div class="col-lg-4 col-md-6 col-sm-12  id=${id} key=${id}">
-  <div class="card mb-3 review-card shadow-sm " style="max-width: 540px">
+  <div class="card mb-3 review-card shadow-sm ">
     <div class="row g-0">
       <div class="col-md-4">
         <img
@@ -76,4 +76,3 @@ const handlesubmit = (e) => {
   state.reviewList.push({ ...input, id });
   updateLocalStorage();
 };
-

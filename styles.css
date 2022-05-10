@@ -18,8 +18,9 @@
   font-weight: 600;
   font-size: 1.8rem !important;
 }
+
 .topNav {
-  padding: 0 100px;
+  padding: 0 10%;
   margin: 0 !important;
 }
 .icon {
@@ -120,12 +121,14 @@
   font-weight: 500;
   color: grey;
 }
+
 .title2 {
   font-size: 3.5rem;
   font-weight: 700;
   color: #1e5128;
   text-shadow: 2px 2px #d8e9a8;
 }
+
 .btn1 {
   -webkit-border-radius: 0;
   -moz-border-radius: 0;
@@ -156,8 +159,8 @@
     text-align: center;
   }
   .content {
-    padding-left: 0 !important;
-    padding-right: 0 !important;
+    padding-left: 5% !important;
+    padding-right: 5% !important;
   }
 }
 .content {
@@ -238,13 +241,14 @@ div.slide-left p {
 }
 
 .offer-card {
-  height: 250px;
+  height: 300px;
+  /* width: 80%; */
   border: none !important;
   border-radius: 0 !important;
-  margin: 30px 20px 30px 20px;
+  margin: 7% 0.2% 7% 0.2%;
 }
 .offers {
-  padding: 50px 80px;
+  padding: 5% 10%;
 }
 .chead {
   font-size: 2rem;
@@ -274,7 +278,7 @@ div.slide-left p {
 }
 
 .category {
-  padding: 20px 100px;
+  padding: 5% 10%;
   text-align: center;
 }
 .category h1 {
@@ -356,14 +360,14 @@ div.slide-left p {
 }
 
 .product {
-  padding-top: 100px;
-  padding-bottom: 100px;
+  padding-top: 10%;
+  padding-bottom: 10%;
 }
 .deal {
   background-image: url("./images/deal.jpg");
   background-position: center;
   background-size: cover;
-  padding: 30px 100px 0 100px;
+  padding: 5% 10% 0 10%;
 }
 .deal h1 {
   color: #1e5128;
@@ -408,8 +412,8 @@ div.slide-left p {
 }
 
 .cont-card {
-  padding-top: 50px;
-  padding-bottom: 50px;
+  padding-top: 5%;
+  padding-bottom: 5%;
 }
 .email-subscriber {
   max-width: 500px;
@@ -444,12 +448,13 @@ div.slide-left p {
 }
 .footer-copyright {
   font-weight: 600;
+  font-size: 1rem;
   color: #1e5128;
   background-color: #cceabb;
-  padding: 50px 100px;
+  padding: 5% 10%;
 }
 .footer-head {
-  padding: 30px 100px !important;
+  padding: 5% 10% !important;
 }
 
 .nav-link:hover {
@@ -480,10 +485,12 @@ div.slide-left p {
   background-image: url("./images/prod-banner2.jpg");
   background-position: center;
   background-size: cover;
-  padding: 100px 0;
+  padding: 10% 2%;
   text-align: center;
   background-repeat: no-repeat;
   transition: all 1s;
+  height: 30vh;
+  width: 100vw;
 }
 .top-sec:hover {
   transform: scale(1.2);
@@ -505,10 +512,10 @@ div.slide-left p {
   font-size: 1.5rem;
 }
 .prod-category {
-  padding-top: 100px;
+  padding-top: 20%;
 }
 .prod-category img {
-  padding: 30px;
+  padding: 10%;
 }
 
 .prod-category h5 {
@@ -520,10 +527,10 @@ div.slide-left p {
 /* About us */
 
 .about-us {
-  padding: 70px 100px 0 100px;
+  padding: 5% 10% 0 10%;
 }
 .about-us img {
-  width: 90%;
+  width: 95%;
   padding: 0;
 }
 .about-us h3 {
@@ -536,7 +543,7 @@ div.slide-left p {
   font-size: 2.5rem;
   color: #1e5128;
   font-weight: 700;
-  padding: 10px 20px 20px 0;
+  padding: 5% 7% 7% 0;
   text-shadow: 1px 2px #4e9f3d;
 }
 
@@ -759,15 +766,16 @@ div.slide-left p {
 }
 
 .blog-row {
-  padding: 0 100px;
+  padding: 0 10%;
 }
 
 /* Reviews */
 #services {
-  padding: 50px 100px;
+  padding: 5% 10%;
 }
 .service-card {
   align-items: center;
+  /* text-align: center; */
 }
 .service-card img {
   padding: 10%;
@@ -780,7 +788,7 @@ div.slide-left p {
   font-size: 1.2rem;
 }
 .review-card {
-  padding: 3%;
+  padding: 1%;
 }
 .right-col {
   align-items: center;
@@ -802,5 +810,43 @@ div.slide-left p {
   overflow: hidden;
 }
 #reviews {
-  padding: 50px 100px;
+  padding: 5% 10%;
+}
+
+@media only screen and (min-width: 301px) and (max-width: 400px) {
+  .title1 {
+    font-size: 2rem;
+  }
+  .title2 {
+    font-size: 3.2rem;
+  }
+  .about-us h3 {
+    font-size: 1.5rem;
+    text-align: center;
+  }
+  .about-us h1 {
+    /* font-size: 2.1rem; */
+    text-align: center;
+  }
+  .about-us p {
+    text-align: center;
+  }
+}
+
+@media only screen and (max-width: 300px) {
+  .title1 {
+    font-size: 1.5rem;
+  }
+  .title2 {
+    font-size: 2rem;
+  }
+}
+
+@media only screen and (max-width: 768px) {
+  .service-card .card-title {
+    text-align: center;
+  }
+  .service-card .card-text {
+    text-align: center;
+  }
 }
