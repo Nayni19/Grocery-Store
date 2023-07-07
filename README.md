@@ -1,4 +1,4 @@
-# Grocery Store 
+# Grocery Store using Javascript DOM
 
 "Welcome to My Grocery Store! We are your one-stop destination for all your grocery needs. Our mission is to provide you with the freshest and highest quality products to make your shopping experience convenient and enjoyable.
 
